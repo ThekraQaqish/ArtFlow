@@ -38,6 +38,7 @@ To be the preferred destination for artists and art enthusiasts to connect and c
 **Backend:** Node.js + Express  
 **Database:** PostgreSQL  
 **Image Storage:** Local or AWS 
+
 **Design Tool:** Figma  
 **Authentication:** Role-based system (JWT)
 
