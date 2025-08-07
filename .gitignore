@@ -1,0 +1,50 @@
+# ملف .gitignore لمشروع ArtFlow (Full-stack)
+
+# --- إعدادات النظام ---
+.DS_Store
+*.local
+*.log*
+*.pid
+*.seed
+*.pid.lock
+
+# --- بيئة التطوير ---
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- الباك إند (Node.js) ---
+server/node_modules/
+server/.env
+server/.env.*
+server/dist/
+server/coverage/
+
+# --- الفرونت إند (React) ---
+client/node_modules/
+client/.env
+client/.env.*
+client/build/
+client/.eslintcache
+client/coverage/
+client/.pnp*
+client/.yarn-integrity
+
+# --- إعدادات IDE ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- ملفات النظام ---
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
