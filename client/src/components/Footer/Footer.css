@@ -1,0 +1,85 @@
+footer {
+background: linear-gradient(to bottom, var(--color-light), var(--color-lightest), var(--color-light));
+  padding: 0.1rem 0.1rem;
+  color: var(--color-red);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 -4px 10px rgba(77, 14, 14, 0.5);
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.1rem;
+}
+
+.footerContainer .footerLogo img {
+  width: 170px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footerContainer .footerLogo img:hover {
+  transform: scale(1.05);
+}
+
+.footerContainer .footerLinks {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.footerContainer .footerLinks a {
+  color: var(--color-red);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footerContainer .footerLinks a:hover {
+  color: var(--color-dark-red);
+  text-decoration: underline;
+}
+
+.footerContainer .footerIcons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footerContainer .footerIcons img {
+  width: 27px;
+  height: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footerContainer .footerIcons img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 3px var(--color-red));
+}
+
+.footerCopy {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .footerContainer {
+    flex-direction: column;
+  }
+  .footerContainer .footerLinks {
+    justify-content: center;
+  }
+  .footerContainer .footerIcons {
+    justify-content: center;
+  }
+}

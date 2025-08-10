@@ -1,4 +1,3 @@
-// controllers/comments.controller.js
 const commentModel = require('../models/comment.model');
 
 exports.getComments = async (req, res) => {

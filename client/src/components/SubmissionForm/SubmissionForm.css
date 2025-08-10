@@ -1,0 +1,67 @@
+.submission-form body {
+  background: linear-gradient(to bottom, var(--color-lightest), var(--color-light));
+  color: var(--color-red);
+  margin: 0;
+  font-family: inherit;
+  padding: 1rem;
+}
+
+.submission-form form {
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+  color: var(--color-red);
+}
+
+.submission-form h2 {
+  color: var(--color-dark-red);
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.submission-form  label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: var(--color-red);
+}
+
+.submission-form  input,
+.submission-form  textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--color-red);
+  border-radius: 8px;
+  background-color: var(--color-lightest);
+  color: var(--color-dark-red);
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.submission-form  input:focus,
+.submission-form  textarea:focus {
+  outline: none;
+  border-color: var(--color-dark-red);
+  background-color: var(--color-light);
+  color: var(--color-dark-red);
+}
+
+.submission-form button {
+  background-color: var(--color-red);
+  color: var(--color-lightest) !important;
+  border: none;
+  padding: 0.7rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submission-form  button:hover {
+  background-color: var(--color-dark-red);
+}

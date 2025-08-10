@@ -6,12 +6,14 @@ const artworkMiddleware = require('../middleware/artwork.middleware');
 router.get('/filter-options', artworkController.getFilterOptions);
 router.get('/filter', routeGuard, artworkController.filterArtworks);
 router.get('/paginated', routeGuard, artworkController.getPaginatedArtworks);
+router.get('/search/artworks', artworkController.searchArtworks); // هنا تحطها فوق /:id
 router.get('/', routeGuard, artworkController.getAllArtworksController);
 router.post('/', routeGuard, artworkController.createArtworkController);
 router.get('/:id', routeGuard, artworkController.getArtworkController);
-router.patch('/:id',routeGuard,artworkMiddleware.checkArtworkOwnership,artworkController.updateArtwork);
-router.delete('/:id',routeGuard,artworkMiddleware.checkArtworkOwnership,artworkController.deleteArtwork);
-router.get('/search/artworks', artworkController.searchArtworks);
+router.patch('/:id', routeGuard, artworkMiddleware.checkArtworkOwnership, artworkController.updateArtwork);
+router.delete('/:id', routeGuard, artworkMiddleware.checkArtworkOwnership, artworkController.deleteArtwork);
+
+
 module.exports = router;
 
 /**

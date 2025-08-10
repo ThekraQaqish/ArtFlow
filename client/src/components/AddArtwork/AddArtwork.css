@@ -1,0 +1,92 @@
+.add-artwork div {
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 8px 25px rgba(77, 14, 14, 0.15);
+  color: var(--color-dark-red);
+
+}
+
+.add-artwork h2 {
+  color: var(--color-dark-red);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-artwork p {
+  color: var(--color-dark-red);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.add-artwork form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.add-artwork input[type="text"],
+.add-artwork input[type="date"],
+.add-artwork textarea,
+.add-artwork select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid var(--color-light);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-dark-red);
+  background-color: var(--color-lightest);
+  transition: border-color 0.3s ease;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.add-artwork input[type="text"]:focus,
+.add-artwork input[type="date"]:focus,
+.add-artwork textarea:focus,
+.add-artwork select:focus {
+  outline: none;
+  border-color: var(--color-red);
+  background-color: var(--color-light);
+
+}
+
+.add-artwork textarea {
+  resize: vertical;
+  min-height: 80px;
+  width: 75%;
+}
+
+.add-artwork button {
+  padding: 12px 0;
+  background-color: var(--color-red);
+  color: var(--color-lightest);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.add-artwork button:hover {
+  background-color: var(--color-dark-red);
+  box-shadow: 0 8px 20px rgba(77, 14, 14, 0.4);
+}

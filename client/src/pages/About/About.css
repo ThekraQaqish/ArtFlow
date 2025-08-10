@@ -1,0 +1,142 @@
+.aboutme-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+  color: var(--color-dark-red);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.aboutme-container h1, h2 {
+  color: var(--color-dark-red);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.aboutme-container .aboutme-section h2 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--color-dark-red);
+}
+.aboutme-container .aboutme-section {
+  background: linear-gradient(135deg, var(--color-light), var(--color-lightest));
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-dark-red);
+  font-weight: 600;
+  box-shadow: 0 6px 15px rgba(77, 14, 14, 0.1);
+  transition: background 0.3s ease;
+}
+
+.aboutme-container .projects-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-light) var(--color-lightest);
+  background: linear-gradient(135deg, var(--color-light), var(--color-lightest));
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.aboutme-container .projects-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.aboutme-container .projects-grid::-webkit-scrollbar-track {
+  background: var(--color-lightest);
+  border-radius: 4px;
+}
+
+.aboutme-container .projects-grid::-webkit-scrollbar-thumb {
+  background-color: var(--color-light);
+  border-radius: 4px;
+}
+
+.aboutme-container .project-card {
+  flex: 0 0 250px;
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(77, 14, 14, 0.2);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-dark-red);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.aboutme-container .project-card:hover {
+  box-shadow: 0 12px 25px rgba(77, 14, 14, 0.35);
+  transform: translateY(-6px);
+}
+
+.aboutme-container .project-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.aboutme-container .project-card h3 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  color: var(--color-dark-red);
+  text-align: center;
+}
+
+.aboutme-container .project-card p {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  text-align: center;
+  color: var(--color-dark-red);
+}
+.aboutme-container .aboutme-section:nth-of-type(even) {
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+}
+
+.aboutme-container .project-link {
+  text-decoration: none;
+  background-color: var(--color-dark-red);
+  color: var(--color-lightest);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.aboutme-container .project-link:hover {
+  background-color: var(--color-light);
+  color: var(--color-dark-red);
+}
+
+@media (max-width: 768px) {
+  .aboutme-container .projects-grid {
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+  
+  .aboutme-container .project-card {
+    flex: 0 0 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutme-container .project-card {
+    flex: 0 0 150px;
+    padding: 12px;
+  }
+  
+  .aboutme-container .project-image {
+    height: 100px;
+  }
+}

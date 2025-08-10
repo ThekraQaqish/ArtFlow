@@ -1,0 +1,104 @@
+.personal-info-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(77, 14, 14, 0.15);
+  color: var(--color-dark-red);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+}
+
+.personal-info-container h1 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: var(--color-dark-red);
+}
+.personal-info-container .artworks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.personal-info-container p {
+  margin: 6px 0;
+  color: var(--color-dark-red);
+  font-weight: 500;
+}
+
+.personal-info-container img {
+  border-radius: 50%;
+  margin: 15px 0 30px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(77, 14, 14, 0.2);
+}
+
+.personal-info-container .edit-profile-btn {
+  background-color: var(--color-red);
+  color: var(--color-lightest);
+  border: none;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 40px;
+}
+
+.personal-info-container .edit-profile-btn:hover {
+  background-color: var(--color-dark-red);
+  color: var(--color-lightest);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(77, 14, 14, 0.3);
+}
+
+.personal-info-container .artworks-section {
+  width: 100%;
+  text-align: center; 
+}
+
+.personal-info-container .artworks-section h2 {
+  color: var(--color-dark-red);
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.personal-info-container .artwork-card {
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(77, 14, 14, 0.15);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  text-align: center;   
+}
+
+.personal-info-container .artwork-image {
+  width: 100%;   
+  max-width: 200px; 
+  height: auto;     
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(77, 14, 14, 0.1);
+  margin-bottom: 15px;
+}
+
+.personal-info-container .artwork-card h3 {
+  margin: 0 0 8px;
+  color: var(--color-dark-red);
+  font-weight: 700;
+}
+
+.personal-info-container .artwork-card p {
+  margin: 4px 0;
+  color: var(--color-red);
+  font-weight: 600;
+}

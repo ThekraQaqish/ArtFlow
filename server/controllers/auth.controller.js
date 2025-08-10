@@ -5,10 +5,10 @@ require('dotenv').config();
 const { createUser, findUserByEmail } = require('../models/auth.model');
 
 exports.register = async (req,res)=>{
-    const {email, password}= req.body;
+    const {name,email, password}= req.body;
     try{
         const hashedpassword= await bcrypt.hash(password,10);
-        const user = await createUser(email, hashedpassword);
+        const user = await createUser(name,email, hashedpassword);
         res.status(201).json({ message: 'User created', user });
 
     }

@@ -3,6 +3,7 @@ const router = express.Router();
 const routeGuard = require('../middleware/auth.middleware');
 const challengeController = require('../controllers/weeklyChallenge.controller');
 
+router.get('/', routeGuard, challengeController.getActiveChallenge);
 router.get('/submissions', routeGuard, challengeController.getSubmissions);
 router.post('/submissions', routeGuard, challengeController.createSubmission);
 router.get('/submissions/:submissionId', routeGuard, challengeController.getSubmission);
