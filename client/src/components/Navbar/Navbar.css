@@ -1,0 +1,115 @@
+ nav {
+background: linear-gradient(to bottom, var(--color-light), var(--color-lightest), var(--color-light));
+  padding: 0.8rem 2rem;
+  box-shadow: 0 3px 8px rgba(77, 14, 14, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbarContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-right: 80px;
+}
+.navbarContainer .navbarLogo {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.8rem;
+  color: var(--color-red);
+  text-decoration: none;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 3px rgba(186, 12, 12, 0.6);
+}
+
+.navbarContainer .navbarLogo:hover {
+  color: var(--color-lightest);
+  transition: color 0.3s ease;
+}
+ .navbarContainer a {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  color: var(--color-red);
+  text-decoration: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbarContainer a:hover {
+  background-color: var(--color-red);
+  color: var(--color-lightest);
+}
+
+.navbarContainer .profileMenu {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbarContainer .profileMenu button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbarContainer .profileMenu button img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.navbarContainer .dropdownMenu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: var(--color-lightest);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(186, 12, 12, 0.2);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 140px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.navbarContainer .dropdownMenu button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-dark-red);
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.navbarLogo:focus, .navbarLogo:active {
+  outline: none;
+}
+
+
+.navbarContainer .dropdownMenu button:hover {
+  background-color: var(--color-light);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .navbarContainer {
+    gap: 1rem;
+  }
+  .navbarContainer .navbarLogo {
+    flex-grow: 0;
+  }
+}

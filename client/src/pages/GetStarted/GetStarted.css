@@ -1,0 +1,65 @@
+.get-started {
+  height: 100vh;
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: var(--color-lightest);
+  color: var(--color-dark-red);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 190px;
+}
+
+.get-started .buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.get-started .btn {
+  background-color: var(--color-red);
+  color: var(--color-lightest);
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 8px rgba(133, 93, 93, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--color-red);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.get-started .btn:hover {
+  background-color: var(--color-dark-red);
+  box-shadow: 0 6px 12px rgba(77, 14, 14, 0.5);
+  transform: translateY(-3px);
+  border-color: var(--color-dark-red);
+}
+
+.get-started .btn-alt {
+  background-color: var(--color-dark-red);
+  color: var(--color-lightest);
+  border: 2px solid var(--color-dark-red);
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 8px rgba(77, 14, 14, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.get-started .btn-alt:hover {
+  background-color: var(--color-red);
+  box-shadow: 0 6px 12px rgba(133, 93, 93, 0.5);
+  transform: translateY(-3px);
+  border-color: var(--color-red);
+}

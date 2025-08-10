@@ -1,0 +1,70 @@
+div.submissions-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+div.card {
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+div.card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+div.card img {
+  width: 150px;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+div.card h3,
+div.card p {
+  color: var(--color-red);
+  margin: 0.3rem 0;
+}
+
+button {
+  background-color: var(--color-red);
+  color: var(--color-lightest);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  display: block;
+  margin: 1rem auto 0;
+  min-width: 120px;
+}
+
+button:hover {
+  background-color: var(--color-dark-red);
+}
+
+body {
+  background: linear-gradient(to bottom, var(--color-lightest), var(--color-light));
+  color: var(--color-red);
+  margin: 0;
+  font-family: inherit;
+  padding: 1rem;
+}
+
+@media (max-width: 900px) {
+  div.submissions-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  div.submissions-container {
+    grid-template-columns: 1fr;
+  }
+}

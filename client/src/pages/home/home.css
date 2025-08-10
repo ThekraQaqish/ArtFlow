@@ -1,0 +1,205 @@
+.home body, html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-lightest);
+  color: var(--color-dark-red);
+}
+
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.home header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home header h1 {
+  font-size: 3rem;
+  color: var(--color-dark-red);
+  text-shadow: 2px 2px 5px rgba(77, 14, 14, 0.3);
+  font-weight: 900;
+}
+
+.home header p {
+  font-size: 1.2rem;
+  color: var(--color-red);
+  margin-top: 8px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.home section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(77, 14, 14, 0.1);
+  background: linear-gradient(135deg, var(--color-light), var(--color-lightest));
+
+}
+.home section:nth-of-type(even) {
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+}
+
+.home section h1, section h2 {
+  color: var(--color-dark-red);
+  text-shadow: 1px 1px 2px rgba(77, 14, 14, 0.3);
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.home section p {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: var(--color-red);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.home button {
+  background-color: var(--color-red);
+  border: none;
+  color: var(--color-lightest);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+  margin-top: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(133, 14, 14, 0.4);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.home button:hover {
+  background-color: var(--color-dark-red);
+  box-shadow: 0 6px 18px rgba(77, 14, 14, 0.6);
+  transform: translateY(-3px);
+}
+
+.home button a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.home section > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+
+.home section > div > div {
+  flex: none;
+  width: 100%;
+  max-width: 300px;
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+  box-shadow: 0 8px 20px rgba(77, 14, 14, 0.25);
+  padding: 30px;
+  border-radius: 20px;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.home section > div > div:hover {
+  box-shadow: 0 12px 35px rgba(133, 14, 14, 0.5);
+  transform: translateY(-8px) scale(1.05);
+}
+
+.home section > div > div img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.home section > div > div:hover img {
+  transform: scale(1.05);
+}
+
+.home section > div > div h4 {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--color-dark-red);
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(77, 14, 14, 0.4);
+  text-align: center;
+}
+
+.home section > div > div p,
+.home section > div > div span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-red);
+  margin-bottom: 12px;
+  text-align: center;
+  font-style: italic;
+}
+
+.home section > div > div button {
+  background-color: var(--color-red);
+  padding: 14px 35px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  border-radius: 35px;
+  box-shadow: 0 6px 15px rgba(133, 14, 14, 0.6);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+  cursor: pointer;
+  color: var(--color-lightest);
+  border: none;
+}
+
+.home section > div > div button:hover {
+  background-color: var(--color-dark-red);
+  box-shadow: 0 8px 25px rgba(77, 14, 14, 0.7);
+  transform: translateY(-4px) scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .home section > div {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .home {
+    padding: 10px;
+  }
+  
+  .home section > div {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .home section > div > div {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .home section > div > div {
+    flex: none;
+    width: 350px;
+  }
+}

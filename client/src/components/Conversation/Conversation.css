@@ -1,0 +1,124 @@
+.conversation-container {
+  max-width: 800px;
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(77, 14, 14, 0.15);
+  color: var(--color-dark-red);
+  padding: 20px 15px;
+
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.conversation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--color-red);
+}
+
+.conversation-header h3 {
+  margin: 0;
+  color: var(--color-dark-red);
+  font-weight: 700;
+}
+
+.conversation-header button {
+  background-color: var(--color-red);
+  color: var(--color-lightest);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.conversation-header button:hover {
+  background-color: var(--color-dark-red);
+}
+
+.conversation-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 15px;
+}
+
+.message {
+  max-width: 70%;
+  margin-bottom: 12px;
+  padding: 2px 6px;
+  border-radius: 20px;
+  font-weight: 600;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.sent {
+  background-color: var(--color-red);
+  color: var(--color-lightest);
+  margin-left: auto;
+  border-bottom-right-radius: 0;
+}
+
+.received {
+  background-color: var(--color-light);
+  color: var(--color-dark-red);
+  border-bottom-left-radius: 0;
+}
+
+.message-time {
+  font-size: 0.7rem;
+  color: var(--color-dark-red);
+  margin-top: 6px;
+  text-align: right;
+}
+
+.conversation-input-container {
+  display: flex;
+  gap: 10px;
+  border-top: 2px solid var(--color-red);
+  padding-top: 10px;
+}
+
+.conversation-input-container input[type="text"] {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: 2px solid var(--color-light);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-dark-red);
+  background-color: var(--color-lightest);
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.conversation-input-container input[type="text"]:focus {
+  border-color: var(--color-red);
+  box-shadow: 0 0 8px var(--color-red);
+}
+
+.conversation-input-container button {
+  background-color: var(--color-red);
+  color: var(--color-lightest);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.conversation-input-container button:hover {
+  background-color: var(--color-dark-red);
+}
+
+@media (max-width: 480px) {
+  .conversation-container {
+    height: 70vh;
+    margin: 20px 15px;
+  }
+}

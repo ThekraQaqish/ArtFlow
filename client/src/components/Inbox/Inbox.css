@@ -1,0 +1,77 @@
+.inbox-container {
+  max-width: 320px;
+  background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(77, 14, 14, 0.15);
+  color: var(--color-dark-red);
+
+  padding: 20px 15px;
+  height: 80vh
+}
+
+.inbox-title {
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  color: var(--color-dark-red);
+  text-align: center;
+  border-bottom: 2px solid var(--color-red);
+  padding-bottom: 8px;
+}
+
+.inbox-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inbox-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.inbox-item:hover,
+.inbox-item.active {
+  background-color: var(--color-light);
+}
+
+.inbox-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(77, 14, 14, 0.15);
+}
+
+.inbox-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.inbox-username {
+  font-weight: 700;
+  color: var(--color-dark-red);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inbox-last-message {
+  font-size: 0.85rem;
+  color: var(--color-red);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inbox-loading,
+.inbox-empty {
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-dark-red);
+  margin-top: 50px;
+}
