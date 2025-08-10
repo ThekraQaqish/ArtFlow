@@ -46,6 +46,7 @@ exports.createArtworkController = async (req, res) => {
 
 exports.getPaginatedArtworks = async (req, res) => {
   try {
+    console.log('Paginated query params:', req.query);
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
     
@@ -84,7 +85,7 @@ exports.deleteArtwork = async (req, res) => {
     if (!deleted) {
       return res.status(404).json({ message: 'Artwork not found' });
     }
-    res.status(204).end(); // 204 No Content أكثر دقة للحذف
+    res.status(204).end();
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server Error' });
@@ -101,6 +102,7 @@ exports.getFilterOptions = async (req, res) => {
         artists: options.artists,
         sortOptions: ['newest', 'oldest', 'popular', 'commented']
       }
+      
     });
   } catch (error) {
     res.status(500).json({ 
@@ -123,7 +125,7 @@ exports.filterArtworks = async (req, res) => {
     };
 
     const artworks = await artworkModel.filterArtworksModel(filters);
-    
+
     res.status(200).json({
       success: true,
       data: artworks,

@@ -2,10 +2,14 @@ const pool = require('../db');
 
 exports.getActiveChallenge = async () => {
   const result = await pool.query(
-    "SELECT id FROM weekly_challenges WHERE start_date <= NOW() AND end_date >= NOW() LIMIT 1"
+    `SELECT * FROM weekly_challenges 
+     WHERE start_date <= NOW() AND end_date >= NOW() 
+     ORDER BY created_at DESC -- أو id DESC 
+     LIMIT 1`
   );
   return result.rows[0];
 };
+
 
 exports.getSubmissions = async (challengeId) => {
   const result = await pool.query(

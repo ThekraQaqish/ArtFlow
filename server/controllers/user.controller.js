@@ -2,7 +2,7 @@
 require('dotenv').config();
 const userModel = require('../models/user.model');
 
-const {getProfileModel,patchProfileModel, getArtistsModel,getUserByIdModel}= require('../models/user.model');
+const {getProfileModel,patchProfileModel, getArtistsModel,getUserByIdModel, getUserProfilePic}= require('../models/user.model');
 
 exports.getProfileController= async(req,res)=>{
     const userId = req.user.id;
@@ -17,6 +17,22 @@ exports.getProfileController= async(req,res)=>{
         res.status(500).json({ message: 'Server Error' });
     }
 }
+exports.getUserProfilePicController = async (req, res) => {
+  const userId = req.user.id; 
+
+  try {
+    const imgData = await getUserProfilePic(userId);
+    if (!imgData) {
+      return res.status(404).send('Profile picture not found');
+    }
+
+    res.set('Content-Type', 'image/png'); 
+    res.send(imgData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server error');
+  }
+};
 
 exports.patchProfileController = async(req,res)=>{
     try {
@@ -55,25 +71,19 @@ exports.getArtistsController= async(req,res)=>{
 }
 
 exports.getUserByIdController = async (req, res) => {
-    try {
-        const userId = req.params.userId; 
-        const user = await getUserByIdModel(userId);
-        
-        if (!user) {
-            return res.status(404).json({ message: 'User not found' });
-        }
-        res.status(200).json({
-            id: user.id,
-            name: user.name,
-            username: user.username,
-            bio: user.bio,
-            pp: user.pp,
-            role: user.role
-        });
-    } catch (error) {
-        console.error('Error fetching user:', error);
-        res.status(500).json({ message: 'Server Error' });
+  try {
+    const userId = req.params.userId;
+    const user = await getUserByIdModel(userId);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
     }
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.error('Error fetching user:', error);
+    res.status(500).json({ message: 'Server Error' });
+  }
 };
 exports.searchArtists = async (req, res) => {
   try {
@@ -106,3 +116,24 @@ exports.searchArtists = async (req, res) => {
 
 
 
+exports.getPaginatedArtists = async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 9;
+
+    const { artists, total } = await userModel.getPaginatedArtists(page, limit);
+
+    res.status(200).json({
+      data: artists,
+      pagination: {
+        page,
+        limit,
+        total,
+        totalPages: Math.ceil(total / limit)
+      }
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+};

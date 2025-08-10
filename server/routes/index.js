@@ -10,7 +10,7 @@ router.use('/artworks', require('./artworks'));
 router.use('/comments', require('./comments'));
 router.use('/likes', require('./likes'));
 router.use('/messages', require('./messages'));
-router.use('/WeeklyCallenge', require('./WeeklyCallenge'));
+router.use('/WeeklyChallenge', require('./WeeklyChallenge'));
 router.use('/admin', require('./admin'));
 router.use('/contactUs', require('./contactUs'));
 

@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 
 module.exports = function routeGuard(req, res, next) {
 
+
     const authHeader = req.headers["authorization"];
     const tokenFromHeader = authHeader && authHeader.split(' ')[1];
     const tokenFromQuery = req.query.token;

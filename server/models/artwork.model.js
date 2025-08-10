@@ -51,7 +51,6 @@ const getPaginatedArtworks = async (page = 1, limit = 10) => {
   try{
     const offset = (parseInt(page) - 1) * parseInt(limit);
     
-    // تنفيذ الاستعلامات بشكل متوازي
     const [artworksResult, countResult] = await Promise.all([
       pool.query(
         `SELECT artworks.*, users.name AS artist_name 
@@ -108,7 +107,6 @@ const deleteArtworkModel = async (id) => {
 
 const getAllFilterOptions = async () => {
   try {
-    // جلب كل الفئات الفريدة
   const categories = await pool.query(`
     SELECT DISTINCT category 
     FROM artworks 
@@ -116,12 +114,11 @@ const getAllFilterOptions = async () => {
     ORDER BY category
   `);
 
-  // جلب كل الفنانين
   const artists = await pool.query(`
     SELECT DISTINCT u.id, u.name
     FROM users u
     JOIN artworks a ON u.id = a.artist_id
-    WHERE u.role = 'artist'
+    WHERE u.role = 'user'
     ORDER BY u.name
   `);
 
@@ -161,13 +158,11 @@ const filterArtworksModel = async (filters) => {
   const whereClauses = [];
   const queryParams = [];
 
-  // فلترة حسب الفئات
   if (categories.length > 0) {
     whereClauses.push(`a.category = ANY($${queryParams.length + 1})`);
     queryParams.push(categories);
   }
 
-  // فلترة حسب الفنانين
   if (artist_ids.length > 0) {
     whereClauses.push(`a.artist_id = ANY($${queryParams.length + 1})`);
     queryParams.push(artist_ids);
@@ -191,7 +186,6 @@ const filterArtworksModel = async (filters) => {
   }
 
 
-  // الترتيب
   switch (sort) {
     case 'oldest':
       query += ` ORDER BY a.created_at ASC`;
@@ -204,7 +198,7 @@ const filterArtworksModel = async (filters) => {
         SELECT COUNT(*) FROM comments WHERE artwork_id = a.id
       ) DESC`;
       break;
-    default: // newest
+    default: 
       query += ` ORDER BY a.created_at DESC`;
   }
 
@@ -221,14 +215,20 @@ const filterArtworksModel = async (filters) => {
 
 const searchArtworksModel = async (searchTerm) => {
   try {
+    const searchTermStart = `${searchTerm}%`;    // بداية النص
+    const searchTermWord = `% ${searchTerm}%`;   // بعد فراغ (بداية كلمة داخل النص)
+
     const result = await pool.query(
       `SELECT artworks.*, users.name AS artist_name 
        FROM artworks 
        JOIN users ON artworks.artist_id = users.id
        WHERE artworks.name ILIKE $1 
-       OR artworks.description ILIKE $1 
-       OR users.name ILIKE $1`,
-      [`%${searchTerm}%`]
+          OR artworks.name ILIKE $2
+          OR artworks.description ILIKE $1
+          OR artworks.description ILIKE $2
+          OR users.name ILIKE $1
+          OR users.name ILIKE $2`,
+      [searchTermStart, searchTermWord]
     );
     return result.rows;
   } catch (error) {
@@ -236,6 +236,7 @@ const searchArtworksModel = async (searchTerm) => {
     throw error;
   }
 };
+
 
 module.exports = {
   getArtworkByIdModel,

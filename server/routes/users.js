@@ -11,6 +11,9 @@ router.get('/artists', routeGuard, userController.getArtistsController);
 
 router.get('/:userId', routeGuard, userController.getUserByIdController);
 router.get('/artists/search', routeGuard, userController.searchArtists);
+router.get('/artists/paginated', routeGuard, userController.getPaginatedArtists);
+router.get('/profile-pic', routeGuard, userController.getUserProfilePicController);
+
 module.exports = router;
 
 /**

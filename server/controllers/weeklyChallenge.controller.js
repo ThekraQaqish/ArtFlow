@@ -53,3 +53,15 @@ exports.getSubmission = async (req, res) => {
     res.status(500).json({ message: 'Server Error' });
   }
 };
+exports.getActiveChallenge = async (req, res) => {
+  try {
+    const challenge = await challengeModel.getActiveChallenge();
+    if (!challenge) {
+      return res.status(404).json({ message: "No active challenge found" });
+    }
+    res.json(challenge);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
