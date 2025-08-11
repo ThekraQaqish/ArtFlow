@@ -1,6 +1,12 @@
 # 🎨 ArtFlow – Artistic Social Platform
 
-ArtFlow is a creative social platform designed for artists and art lovers. It allows artists to showcase their artworks, connect with an audience, participate in weekly challenges, and engage with the community through comments, likes, and messages.
+ ## Project Idea:
+ArtFlow is an innovative artistic social platform designed to empower artists to showcase their artworks and connect with a broad audience of art enthusiasts. The application provides an interactive environment where users can discover artworks, participate in weekly challenges, and engage with artists through comments, likes, and direct messaging.
+
+---
+
+## Problem It Solves:
+Many artists, especially independents, face difficulties reaching a wide audience and lack an effective platform to display their work and communicate with interested viewers. Similarly, art lovers lack a centralized, interactive, and organized space that connects them with artists and art events.
 
 ---
 
@@ -11,12 +17,12 @@ ArtFlow is a creative social platform designed for artists and art lovers. It al
 
 ## 📌 Features
 
-- User registration and login (with role-based access: admin, artist, guest)
+- User registration and login (with role-based access: admin, user)
 - Artist profile page with editable personal info and artwork showcase
-- Upload artworks with multiple images, descriptions, and tags
-- Public gallery with filters by type, artist, and popularity
-- Like and comment system on artworks
-- Weekly art challenges with user voting
+- Upload, Update, Delete artworks with images, descriptions, and tags
+- Public gallery with filters by category, artist, and popularity
+- Like and comment system on artworks (backend)
+- Weekly art challenges
 - Direct messaging between users and artists
 - Admin dashboard to manage weekly challenges
 
@@ -32,15 +38,24 @@ To be the preferred destination for artists and art enthusiasts to connect and c
 
 ---
 
-## 🛠️ Tech Stack
+ ## 🚀 Technologies Used:
 
-**Frontend:** React  
-**Backend:** Node.js + Express  
-**Database:** PostgreSQL  
-**Image Storage:** Local or AWS 
+**Frontend**: React.js to create a dynamic and interactive user experience.
 
-**Design Tool:** Figma  
-**Authentication:** Role-based system (JWT)
+**Backend**: Node.js with Express for building a flexible and scalable API.
+
+**Database**: PostgreSQL to store user data, artworks, and comments.
+
+**Authentication**: JWT with role-based user access control.
+
+**UI Design**: Figma for designing easy-to-use and responsive interfaces.
+
+
+## **📚 API Documentation**
+
+Explore the complete API endpoints and examples in our interactive Swagger documentation:  
+
+- Live Documentation: ([Swagger UI](http://localhost:3000/api-docs/))
 
 ---
 
@@ -48,7 +63,6 @@ To be the preferred destination for artists and art enthusiasts to connect and c
 
 - `users` – User accounts with role, name, email, bio, image  
 - `artworks` – Artwork info like title, type, description, price  
-- `artwork_images` – Multiple images linked to each artwork  
 - `weekly_challenges` – Challenge title, description, start/end date  
 - `challenge_submissions` – Artwork submissions to weekly challenges  
 - `likes` – Track users who liked each artwork  
@@ -69,8 +83,9 @@ To be the preferred destination for artists and art enthusiasts to connect and c
 | Upload Artwork | For artists to add new work |
 | Artists List | Discover and browse artists |
 | Artist Profile | Public profile and portfolio |
+|Personal Profile | Private profile and settings|
 | Personal Info | Edit user information |
-| Weekly Challenge | View, participate, and vote in challenges |
+| Weekly Challenge | View, participate in challenges |
 | Messages | Contact artists or check inbox |
 | About | Project vision and story |
 | Contact | General inquiries |
@@ -88,3 +103,17 @@ To be the preferred destination for artists and art enthusiasts to connect and c
 ## Planing
 
 [Notion  Platform Project Plan](https://www.notion.so/ArtFlow-Platform-Project-Plan-243a759696f280318037db5bc4bb451c)
+
+---
+## 🚀 Future Plans
+
+- Enhance the user interface and interaction experience.  
+- Support external login via Google and Facebook.  
+- Add likes and comments system for greater engagement on artworks.  
+- Implement live voting system in weekly challenges with prizes.  
+- Develop notifications and alerts for user activity.  
+- Enable artists to offer courses or educational sessions.  
+- Expand the admin dashboard with analytics and performance insights.  
+- Optimize performance and prepare for scalable growth.
+
+---
