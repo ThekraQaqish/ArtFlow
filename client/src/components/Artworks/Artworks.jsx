@@ -72,37 +72,31 @@ const Artworks = () => {
 
       try {
         let url;
-        let params = {};
-        
-        if (searchTerm.trim() !== "") {
+        let params = { page, limit, sort: filters.sort };
 
+        if (filters.categories.length > 0) {
+          params.categories = filters.categories.join(",");
+        }
+
+        if (filters.artist_ids.length > 0) {
+          params.artist_ids = filters.artist_ids.join(",");
+        }
+
+        if (searchTerm.trim() !== "") {
+          // إذا الـ API /search/artworks ما بيدعم الفلاتر، هنا المشكلة
           url = "http://localhost:3000/api/artworks/search/artworks";
-          params = { q: searchTerm.trim() };
+          params.q = searchTerm.trim();
         } else if (
           filters.categories.length === 0 &&
           filters.artist_ids.length === 0 &&
           filters.sort === "newest"
         ) {
-
           url = "http://localhost:3000/api/artworks/paginated";
-          params = { page, limit };
         } else {
-
           url = "http://localhost:3000/api/artworks/filter";
-          params = {
-            page,
-            limit,
-            sort: filters.sort,
-          };
-
-          if (filters.categories.length > 0) {
-            params.categories = filters.categories.join(",");
-          }
-
-          if (filters.artist_ids.length > 0) {
-            params.artist_ids = filters.artist_ids.join(",");
-          }
         }
+
+
 
         const res = await axios.get(url, {
           params,

@@ -58,10 +58,14 @@
 
 .sent {
   background-color: var(--color-red);
-  color: var(--color-lightest);
+  color: var(--color-lightest) !important;
   margin-left: auto;
   border-bottom-right-radius: 0;
 }
+
+.sent p{
+  color: var(--color-lightest) !important;
+  }
 
 .received {
   background-color: var(--color-light);

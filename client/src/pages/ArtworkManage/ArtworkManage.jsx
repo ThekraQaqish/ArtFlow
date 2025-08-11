@@ -9,6 +9,8 @@ const ArtworkManage = () => {
   const navigate = useNavigate();
   const [data, setData] = useState(null);
   const [editMode, setEditMode] = useState(false);
+  const currentUserId = Number(localStorage.getItem("user_id"));
+
   const [form, setForm] = useState({
     name: "",
     description: "",
@@ -16,6 +18,7 @@ const ArtworkManage = () => {
     category: "",
     artwork_date: ""
   });
+
 
   useEffect(() => {
     fetchArtwork();
@@ -85,9 +88,13 @@ const ArtworkManage = () => {
           <p>{data.category}</p>
           <p>{data.artwork_date}</p>
           <div className="buttons">
-            <button onClick={() => setEditMode(true)}>Edit</button>
-            <button onClick={handleDelete}>Delete</button>
-          </div>
+          {currentUserId && data.artist_id === currentUserId && (
+            <>
+              <button onClick={() => setEditMode(true)}>Edit</button>
+              <button onClick={handleDelete}>Delete</button>
+            </>
+          )}
+        </div>
         </div>
       ) : (
         <div className="artwork-edit">
@@ -97,9 +104,13 @@ const ArtworkManage = () => {
           <input name="category" value={form.category} onChange={handleChange} placeholder="Category" />
           <input type="date" name="artwork_date" value={form.artwork_date} onChange={handleChange} />
           <div className="buttons">
-            <button onClick={handleUpdate}>Save</button>
-            <button onClick={() => setEditMode(false)}>Cancel</button>
-          </div>
+          {currentUserId && data.artist_id === currentUserId && (
+            <>
+              <button onClick={handleUpdate}>Save</button>
+              <button onClick={()=> setEditMode(false)}>Cancel</button>
+            </>
+          )}
+        </div>
         </div>
       )}
     </div>

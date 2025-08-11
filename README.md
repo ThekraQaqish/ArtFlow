@@ -51,6 +51,13 @@ To be the preferred destination for artists and art enthusiasts to connect and c
 **UI Design**: Figma for designing easy-to-use and responsive interfaces.
 
 
+
+**Authentication**: JWT with role-based user access control.
+
+**UI Design**: Figma for designing easy-to-use and responsive interfaces.
+
+
+
 ## **📚 API Documentation**
 
 Explore the complete API endpoints and examples in our interactive Swagger documentation:  
@@ -116,4 +123,4 @@ Explore the complete API endpoints and examples in our interactive Swagger docum
 - Expand the admin dashboard with analytics and performance insights.  
 - Optimize performance and prepare for scalable growth.
 
----
+

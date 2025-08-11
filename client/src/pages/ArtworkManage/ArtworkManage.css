@@ -13,12 +13,14 @@ body {
 
 .artwork-view h1 {
   color: var(--color-red);
+  text-align: center;
 }
 
 .artwork-view p,
 .artwork-edit input,
 .artwork-edit textarea {
   color: var(--color-dark-red);
+  text-align: center;
 }
 
 .artwork-view img {

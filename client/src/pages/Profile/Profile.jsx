@@ -15,6 +15,8 @@ const PersonalInfo = () => {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
+        localStorage.setItem("user_id", data.id);
+
         setProfile(data);
       } catch (error) {
         console.error("Error fetching profile:", error);

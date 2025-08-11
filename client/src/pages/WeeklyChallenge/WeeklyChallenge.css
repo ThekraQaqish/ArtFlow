@@ -1,8 +1,11 @@
 .weekly-challenge-container {
-  min-height: 100vh;
+  min-height: 90%;
   padding: 2rem;
   background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
   color: var(--color-dark-red);
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
 }
 
 .weekly-challenge-container .challenge-header {
@@ -73,7 +76,11 @@
 
 .weekly-challenge-container .gallery-container {
   display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
   gap: 1.5rem;
+  justify-content: center;
+
 }
 
 .weekly-challenge-container .gallery-container > div {

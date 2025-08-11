@@ -12,6 +12,12 @@ const AdminWeeklyChallenge = () => {
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const formatDate = (dateStr) => {
+  if (!dateStr) return "";
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  const date = new Date(dateStr);
+  return date.toLocaleDateString(undefined, options);
+};
 
   useEffect(() => {
     fetchActiveChallenge();
@@ -31,8 +37,40 @@ const AdminWeeklyChallenge = () => {
   };
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+      const { name, value } = e.target;
+
+      if (name === "start_date") {
+        const start = new Date(value);
+        const end = new Date(start);
+        end.setDate(start.getDate() + 7);
+        setForm({
+          ...form,
+          start_date: value,
+          end_date: end.toISOString().split("T")[0]
+        });
+      } 
+      else if (name === "end_date") {
+        const today = new Date();
+        const end = new Date(value);
+
+        if (end < today) {
+          setError("End date cannot be in the past");
+          return;
+        }
+
+        const start = new Date(end);
+        start.setDate(end.getDate() - 7);
+        setForm({
+          ...form,
+          end_date: value,
+          start_date: start.toISOString().split("T")[0]
+        });
+      } 
+      else {
+        setForm({ ...form, [name]: value });
+      }
+    };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -99,16 +137,17 @@ const AdminWeeklyChallenge = () => {
       
       <h3>Active Challenge</h3>
       {challenge ? (
-      <div className="active-challenge">
-        <h4>{challenge.title}</h4>
-        <p>{challenge.description}</p>
-        <p>
-          From: {challenge.start_date} To: {challenge.end_date}
-        </p>
-      </div>
-    ) : (
-      <p>No active challenge</p>
-    )}
+        <div className="active-challenge" style={{background: '#f0f4f8', padding: '1rem', borderRadius: '8px'}}>
+          <h4 style={{marginBottom: '0.5rem'}}>{challenge.title}</h4>
+          <p style={{marginBottom: '1rem'}}>{challenge.description}</p>
+          <p style={{fontWeight: 'bold', color: '#555'}}>
+            From: <span style={{color:'#14c33cff'}}>{formatDate(challenge.start_date)}</span> &nbsp;&nbsp; 
+            To: <span style={{color:'#fa0707ff'}}>{formatDate(challenge.end_date)}</span>
+          </p>
+        </div>
+      ) : (
+        <p>No active challenge</p>
+      )}
 
     </div>
   );
