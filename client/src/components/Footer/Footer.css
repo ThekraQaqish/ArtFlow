@@ -1,5 +1,5 @@
 footer {
-background: linear-gradient(to bottom, var(--color-light), var(--color-lightest), var(--color-light));
+background-color:var(--color-light);
   padding: 0.1rem 0.1rem;
   color: var(--color-red);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

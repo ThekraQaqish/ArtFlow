@@ -32,7 +32,7 @@ const UserProfile = () => {
       {/* <p>Username: {profile.username}</p>
       <p>Role: {profile.role}</p> */}
       <button onClick={() => navigate('/messages', { state: { activeUserId: profile.id } })}>
-       Get in Touch{profile.name}
+       Get in Touch with {profile.name}
       </button>
 
 

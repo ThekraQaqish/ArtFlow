@@ -1,5 +1,5 @@
  nav {
-background: linear-gradient(to bottom, var(--color-light), var(--color-lightest), var(--color-light));
+background-color:var(--color-light);
   padding: 0.8rem 2rem;
   box-shadow: 0 3px 8px rgba(77, 14, 14, 0.6);
   position: sticky;
@@ -13,6 +13,14 @@ background: linear-gradient(to bottom, var(--color-light), var(--color-lightest)
   gap: 1.5rem;
   padding-right: 80px;
 }
+
+.active-link {
+  border-bottom: 4px solid var(--color-red); 
+  padding-bottom: 4px;
+  color: var(--color-red); 
+  transition: border-bottom 0.3s ease;
+}
+
 .navbarContainer .navbarLogo {
   font-weight: 900;
   font-style: italic;

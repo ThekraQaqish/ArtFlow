@@ -4,6 +4,9 @@ div.submissions-container {
   gap: 1.5rem;
   padding: 1rem 0;
 }
+.gallery-container{
+  justify-items: center;
+}
 
 div.card {
   background: linear-gradient(135deg, var(--color-lightest), var(--color-light));
@@ -12,6 +15,8 @@ div.card {
   padding: 1rem;
   text-align: center;
   transition: box-shadow 0.3s ease;
+  width: 90%;
+  margin: 0 auto;
 }
 
 div.card:hover {
@@ -30,6 +35,7 @@ div.card h3,
 div.card p {
   color: var(--color-red);
   margin: 0.3rem 0;
+
 }
 
 button {

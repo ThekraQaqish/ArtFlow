@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import './Navbar.css';
 
@@ -25,13 +25,13 @@ const Navbar = () => {
     return (
         <nav className='navbar'>
             <div className='navbarContainer'>
-                <Link to='/' className='navbarLogo'>ArtFlow</Link>
-                <Link to='/'>Home</Link>
-                <Link to='/Artworks'>Artworks</Link>
-                <Link to='/Artists'>Artists</Link>
-                <Link to='/WeeklyChallenge'>Weekly Challenge</Link>
-                <Link to='/about'>About</Link>
-                <Link to='/contact'>Contact</Link>
+                <NavLink to='/' className={({ isActive }) => isActive ? "active-link navbarLogo" : "navbarLogo"}>ArtFlow</NavLink>
+                <NavLink to='/' className={({ isActive }) => isActive ? "active-link" : ""}>Home</NavLink>
+                <NavLink to='/Artworks' className={({ isActive }) => isActive ? "active-link" : ""}>Artworks</NavLink>
+                <NavLink to='/Artists' className={({ isActive }) => isActive ? "active-link" : ""}>Artists</NavLink>
+                <NavLink to='/WeeklyChallenge' className={({ isActive }) => isActive ? "active-link" : ""}>Weekly Challenge</NavLink>
+                <NavLink to='/about' className={({ isActive }) => isActive ? "active-link" : ""}>About</NavLink>
+                <NavLink to='/contact' className={({ isActive }) => isActive ? "active-link" : ""}>Contact</NavLink>
 
                 <div className="profileMenu" ref={modalRef}>
                     <button onClick={() => setShowModal(!showModal)}>
